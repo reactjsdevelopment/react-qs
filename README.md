@@ -41,4 +41,6 @@ forwardRef
 customhooks
 
 More1
+
+write a http service method where i can call N number of requestes with the same function using AXIOS (method GET)
 ```
