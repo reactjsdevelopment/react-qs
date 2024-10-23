@@ -154,6 +154,35 @@ Hide/Show table of contents
       </p>
       </details>
 
+  - `useRef`: useRef is used to create a mutable reference that persists for the full lifetime of the component. It's often used to access a DOM element directly.
+      <details><summary>Code</summary>
+      <p>
+
+      ```jsx
+      import React, { useRef } from 'react';
+
+        const InputFocus = () => {
+            const inputRef = useRef(null);
+
+            const focusInput = () => {
+                if (inputRef.current) {
+                    inputRef.current.focus();
+                }
+            };
+
+            return (
+                <div>
+                    <input ref={inputRef} type="text" placeholder="Click the button to focus" />
+                    <button onClick={focusInput}>Focus Input</button>
+                </div>
+            );
+        };
+
+      ```
+
+      </p>
+      </details>
+
   - `useEffect`: Handles side effects like data fetching and subscriptions.
       <details><summary>Code</summary>
       <p>
@@ -264,6 +293,28 @@ Hide/Show table of contents
       </p>
       </details>
 
+ - `useSelector`: is a hook from the React-Redux library that allows you to extract data from the Redux store state.
+      <details><summary>Code</summary>
+      <p>
+
+      ```jsx
+      import React from 'react';
+      import { useSelector } from 'react-redux';
+
+        const CounterDisplay = () => {
+            const count = useSelector((state) => state.counter.value);
+
+            return (
+                <div>
+                    <p>Count from Redux: {count}</p>
+                </div>
+            );
+        };
+      ```
+
+      </p>
+      </details>
+
   - `useCallback`: Memoizes functions to prevent unnecessary re-renders.
       <details><summary>Code</summary>
       <p>
@@ -307,6 +358,37 @@ Hide/Show table of contents
 16. ### Custom Hooks
 
     Custom hooks are functions that allow you to extract and reuse stateful logic across multiple components. They can use built-in hooks and can be shared easily among different components.
+
+    ```jsx
+    import { useState } from 'react';
+
+    // Custom hook
+    const useCounter = (initialValue = 0) => {
+        const [count, setCount] = useState(initialValue);
+
+        const increment = () => setCount(count + 1);
+        const decrement = () => setCount(count - 1);
+        const reset = () => setCount(initialValue);
+
+        return { count, increment, decrement, reset };
+    };
+
+    // Component using the custom hook
+    const Counter = () => {
+        const { count, increment, decrement, reset } = useCounter(0);
+
+        return (
+            <div>
+                <p>Count: {count}</p>
+                <button onClick={increment}>Increment</button>
+                <button onClick={decrement}>Decrement</button>
+                <button onClick={reset}>Reset</button>
+            </div>
+        );
+    };
+
+    export default Counter;
+    ```
 
     **[⬆ Back to Top](#table-of-contents)**
 
