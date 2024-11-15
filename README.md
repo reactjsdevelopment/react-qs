@@ -341,6 +341,28 @@ Hide/Show table of contents
               </div>
           );
       };
+
+      const UserDetails = ({user, onEdit}) =>{
+
+    const {title, full_name, profile_img} = user;
+
+    return (
+
+        <div className="user-detail-wrapper">
+
+            <img src={profile_img} />
+
+            <h4>{full_name}</h4>
+
+            <p>{title}</p>
+
+        </div>
+
+    )
+
+}
+
+export default React.memo(UserDetails)
       ```
 
     </p>
