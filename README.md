@@ -20,7 +20,7 @@ I'm Sam, and I'm passionate about product engineering and web development. I cre
 
 
 ### About the app
-react interview questions
+react interview questions. Basic things to learn in React.js
 
 ### useful commands to run project
 

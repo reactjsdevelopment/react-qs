@@ -6,7 +6,7 @@ import shortid from  "shortid";
 
         <Comment
 
-            {..comment}
+            {...comment}
 
             key={shortid.generate()} />
 
