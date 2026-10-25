@@ -24,6 +24,9 @@ react interview questions. Basic things to learn in React.js
 
 ### useful commands to run project
 
+### Request issue on any app 
+https://github.com/reactjsdevelopment/react-qs/issues/new?title=Your%20request%20title&body=Your%20request%20body.
+
 ## Subscribe and Stay Updated!
 
 Don't miss out on new videos! Subscribe to my channel and hit the notification bell 🔔 to receive updates whenever I upload fresh content. Let's learn, laugh, and explore together!
